@@ -12,7 +12,7 @@ function (zrender) {
   const ImageShape = require('shape/Image')
   const height = Math.ceil(zr.getHeight())
   const zrWidth = Math.ceil(zr.getWidth())
-  const frameNum = 30
+  const frameNum = 60
   let imgTimer = null
   let image = null
 
@@ -50,7 +50,7 @@ function (zrender) {
 
   function startTimer ({width, imgWidth, imgHeight}) {
     imgTimer = setInterval(() => {
-      image.style.sx += 2
+      image.style.sx += 1
       if (image.style.sx >= imgWidth - imgWidth / width * zrWidth) clearInterval(imgTimer)
       zr.modShape(image.id, image)
       zr.refresh()
